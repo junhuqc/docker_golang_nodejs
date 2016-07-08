@@ -1,5 +1,7 @@
-FROM alpine:3.4
+FROM golang:1.6.2-alpine
 RUN apk add --no-cache nodejs git 
 RUN git clone https://github.com/etsy/statsd.git
 
-ENTRYPOINT ["node", "/statsd/stats.js", "/statsd/exampleConfig.js"]
+WORKDIR /go
+
+#ENTRYPOINT ["node", "/statsd/stats.js", "/statsd/exampleConfig.js"]
